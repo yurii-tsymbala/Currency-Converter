@@ -8,7 +8,18 @@ import { Currency } from '../model/currency';
 export class ExchangeService {
   constructor() {}
 
-  convertFromTo(fromMoney: Money, toMoney: Money) {
+  async getExchangeData(): Promise<Money[]> {
+    const moneyUAH = new Money('', 'uah');
+    const moneyUSD = new Money('', 'usd');
+    const moneyEUR = new Money('', 'eur');
+    const usdToUah = await this.convertFromTo(moneyUSD, moneyUAH);
+    const eurToUah = await this.convertFromTo(moneyEUR, moneyUAH);
+    return new Promise<Money[]>(function (myResolve, myReject) {
+      myResolve([usdToUah, eurToUah]);
+    });
+  }
+
+  convertFromTo(fromMoney: Money, toMoney: Money): Promise<Money> {
     const link = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromMoney.currency}/${toMoney.currency}.json`;
     return new Promise<Money>(function (myResolve, myReject) {
       let xhr = new XMLHttpRequest();
