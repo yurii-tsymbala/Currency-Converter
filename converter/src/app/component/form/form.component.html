@@ -1,0 +1,15 @@
+<div id="inputZone" className="divWithBorder">
+  <input
+    class="input"
+    [ngModel]="amountInput"
+    (ngModelChange)="getAmount($event)"
+  />
+  <select 
+    [ngModel]="currencyInput" 
+    (ngModelChange)="getCurrency($event)"
+    >
+    <option value="usd">USD</option>
+    <option value="uah">UAH</option>
+    <option value="eur">EUR</option>
+  </select>
+</div>
