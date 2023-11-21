@@ -1,6 +1,6 @@
 <div class="App">
   <div id="center" className="divWithBorder">
-    <form></form>
-    <form></form>
+    <form [money]="leftMoney" (valueChanged)="leftFormChanged($event)"></form>
+    <form [money]="rightMoney" (valueChanged)="rightFormChanged($event)"></form>
   </div>
 </div>

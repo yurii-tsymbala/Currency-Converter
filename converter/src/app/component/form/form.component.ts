@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Money } from 'src/app/model/money';
 
 @Component({
@@ -8,17 +8,19 @@ import { Money } from 'src/app/model/money';
 })
 export class FormComponent {
   @Output() valueChanged = new EventEmitter<Money>();
-  amountInput: string = '';
-  currencyInput: string = '';
+  @Input() money!: Money;
 
   constructor() {}
 
   getAmount(newValue: string) {
-    this.amountInput = newValue;
-    console.log(newValue);
+    this.money.amount = newValue;
+    const updatedMoney = new Money(this.money.amount, this.money.currency);
+    this.valueChanged.emit(updatedMoney)
   }
 
   getCurrency(newValue: string) {
-    this.currencyInput = newValue;
+    this.money.currency = newValue;
+    const updatedMoney = new Money(this.money.amount, this.money.currency);
+    this.valueChanged.emit(updatedMoney)
   }
 }
