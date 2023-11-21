@@ -1,0 +1,6 @@
+.container {
+    font-size: large;
+    &:hover {
+        background-color: red;
+    }
+}
