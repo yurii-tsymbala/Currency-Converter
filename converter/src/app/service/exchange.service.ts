@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Money } from '../model/money';
+import { Currency } from '../model/currency';
 
 @Injectable({
   providedIn: 'root',
@@ -6,8 +8,10 @@ import { Injectable } from '@angular/core';
 export class ExchangeService {
   constructor() {}
 
-  convertFromTo(fromCurrency: string, toCurrency: string) {
-    const link = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromCurrency}/${toCurrency}.json`;
+  convertFromTo() {
+    const fromMoney = new Money("100", Currency.usd);
+    const toMoney = new Money("100", Currency.uah);
+    const link = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromMoney.currency}/${toMoney.currency}.json`;
     return new Promise<string>(function (myResolve, myReject) {
       let xhr = new XMLHttpRequest();
       xhr.open('GET', link);

@@ -3,14 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './component/app/app.component';
 import { ExchangeService } from './service/exchange.service';
+import { FormComponent } from './component/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [ExchangeService],
   bootstrap: [AppComponent]

@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'converter';
 
   constructor(private service: ExchangeService) {
-    service.convertFromTo("usd","uah");
-
+    service.convertFromTo();
   }
 }
