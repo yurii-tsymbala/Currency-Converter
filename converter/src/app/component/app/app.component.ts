@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExchangeService } from 'src/app/service/exchange.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'converter';
+
+  constructor(private service: ExchangeService) {
+    service.convertFromTo("usd","uah");
+
+  }
 }
