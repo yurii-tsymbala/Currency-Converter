@@ -1,6 +1,24 @@
-.container {
-    font-size: large;
-    &:hover {
-        background-color: red;
-    }
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  
+  padding: 10px;
+}
+
+.divWithBorder {
+  border: 1px solid #f0f0f0ab;
+  border-radius: 15px;
+  background-color: #00000069;
 }

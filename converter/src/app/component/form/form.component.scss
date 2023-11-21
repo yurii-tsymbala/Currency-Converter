@@ -1,0 +1,20 @@
+.divWithBorder {
+  border: 1px solid #f0f0f0ab;
+  border-radius: 15px;
+  background-color: #00000069;
+}
+
+.input {
+  height: 1.6rem;
+  border-radius: 10px;
+  padding-inline: 0.5rem;
+  border: 1px solid #ffffffab;
+  color: white;
+  background-color: black;
+}
+
+#inputZone {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
