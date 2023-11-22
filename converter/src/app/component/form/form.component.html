@@ -8,9 +8,7 @@
     [ngModel]="money.currency" 
     (ngModelChange)="getCurrency($event)"
     >
-    <option value="usd">USD</option>
-    <option value="uah">UAH</option>
-    <option value="eur">EUR</option>
-    <option value="pln">PLN</option>
+    
+    <option *ngFor="let currency of currencies" value="currency">{{currency.toUpperCase()}}</option>
   </select>
 </div>

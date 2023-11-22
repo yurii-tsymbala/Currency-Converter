@@ -9,18 +9,19 @@ import { Money } from 'src/app/model/money';
 export class FormComponent {
   @Output() valueChanged = new EventEmitter<Money>();
   @Input() money!: Money;
+  currencies: String[] = ['usd', 'uah', 'eur', 'pln'];
 
   constructor() {}
 
   getAmount(newValue: string) {
     this.money.amount = newValue;
     const updatedMoney = new Money(this.money.amount, this.money.currency);
-    this.valueChanged.emit(updatedMoney)
+    this.valueChanged.emit(updatedMoney);
   }
 
   getCurrency(newValue: string) {
     this.money.currency = newValue;
     const updatedMoney = new Money(this.money.amount, this.money.currency);
-    this.valueChanged.emit(updatedMoney)
+    this.valueChanged.emit(updatedMoney);
   }
 }
