@@ -8,7 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
 import { CellComponent } from './component/cell/cell.component';
 import { NumbersDirective } from './directive/numbers.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,16 @@ import { NumbersDirective } from './directive/numbers.directive';
     FormComponent,
     HeaderComponent,
     CellComponent,
-    NumbersDirective
+    NumbersDirective,
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [ExchangeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

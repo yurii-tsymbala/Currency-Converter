@@ -9,9 +9,8 @@ import { Money } from 'src/app/model/money';
 export class FormComponent {
   @Output() moneyChanged = new EventEmitter<Money>();
   @Input() money!: Money;
-  currencies: String[] = ['usd', 'uah', 'eur', 'pln'];
 
-  constructor() {}
+  currencies: String[] = ['usd', 'uah', 'eur', 'pln'];
 
   amountChanged() {
     this.moneyChanged.emit(this.money);
