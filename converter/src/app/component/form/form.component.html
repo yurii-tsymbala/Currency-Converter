@@ -2,13 +2,15 @@
   <input
     class="input"
     [(ngModel)]="money.amount"
-    (ngModelChange)="getAmount($event)"
+    (ngModelChange)="amountChanged()"
   />
   <select 
     [(ngModel)]="money.currency" 
-    (ngModelChange)="getCurrency($event)"
-    >
-    
-    <option *ngFor="let currency of currencies" [value]="currency">{{currency.toUpperCase()}}</option>
+    (ngModelChange)="currencyChanged()">
+    <option 
+      *ngFor="let currency of currencies" 
+      [value]="currency">
+      {{ currency.toUpperCase() }}
+    </option>
   </select>
 </div>
