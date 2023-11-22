@@ -7,6 +7,7 @@ import { FormComponent } from './component/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
 import { CellComponent } from './component/cell/cell.component';
+import { NumbersDirective } from './directive/numbers.directive';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CellComponent } from './component/cell/cell.component';
     AppComponent,
     FormComponent,
     HeaderComponent,
-    CellComponent
+    CellComponent,
+    NumbersDirective
   ],
   imports: [
     BrowserModule, FormsModule
