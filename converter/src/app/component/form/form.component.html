@@ -9,6 +9,6 @@
     (ngModelChange)="getCurrency($event)"
     >
     
-    <option *ngFor="let currency of currencies" value="currency">{{currency.toUpperCase()}}</option>
+    <option *ngFor="let currency of currencies" [value]="currency">{{currency.toUpperCase()}}</option>
   </select>
 </div>
