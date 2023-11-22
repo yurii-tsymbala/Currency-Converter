@@ -1,20 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 10px;
+  margin-right: 1rem;
+}
+
 .label {
-    font-weight: 900;
-  }
-  
-  .divWithBorder {
-    border: 1px solid #f0f0f0ab;
-    border-radius: 15px;
-    background-color: #00000069;
-  }
-  
-  .cell {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 3rem;
-    border: 1px solid;
-    padding: 10px;
-    margin-right: 1rem;
-  }
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: whitesmoke;
+}

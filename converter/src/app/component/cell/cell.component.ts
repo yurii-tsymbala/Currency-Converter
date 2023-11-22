@@ -8,4 +8,12 @@ import { Money } from 'src/app/model/money';
 })
 export class CellComponent {
   @Input() money!: Money;
+
+  get cellValue(): string {
+    return (
+      this.money.currency.toUpperCase() +
+      '/UAH ' +
+      Number(this.money.amount).toFixed(2)
+    );
+  }
 }
