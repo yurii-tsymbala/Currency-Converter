@@ -10,10 +10,12 @@ export class ExchangeService {
 
   async getExchangeData(): Promise<Money[]> {
     const moneyUAH = new Money('', 'uah');
-    const moneyUSD = new Money('', 'usd');
-    const moneyEUR = new Money('', 'eur');
+    const moneyUSD = new Money('1', 'usd');
+    const moneyEUR = new Money('1', 'eur');
     const usdToUah = await this.convertFromTo(moneyUSD, moneyUAH);
+    usdToUah.currency = "usd";
     const eurToUah = await this.convertFromTo(moneyEUR, moneyUAH);
+    eurToUah.currency = "eur";
     return new Promise<Money[]>(function (myResolve, myReject) {
       myResolve([usdToUah, eurToUah]);
     });
