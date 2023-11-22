@@ -14,14 +14,10 @@ export class FormComponent {
   constructor() {}
 
   getAmount(newValue: string) {
-    this.money.amount = newValue;
-    const updatedMoney = new Money(this.money.amount, this.money.currency);
-    this.valueChanged.emit(updatedMoney);
+    this.valueChanged.emit(this.money);
   }
 
   getCurrency(newValue: string) {
-    this.money.currency = newValue;
-    const updatedMoney = new Money(this.money.amount, this.money.currency);
-    this.valueChanged.emit(updatedMoney);
+    this.valueChanged.emit(this.money);
   }
 }

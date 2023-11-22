@@ -1,11 +1,11 @@
 <div id="inputZone" className="divWithBorder">
   <input
     class="input"
-    [ngModel]="money.amount"
+    [(ngModel)]="money.amount"
     (ngModelChange)="getAmount($event)"
   />
   <select 
-    [ngModel]="money.currency" 
+    [(ngModel)]="money.currency" 
     (ngModelChange)="getCurrency($event)"
     >
     
