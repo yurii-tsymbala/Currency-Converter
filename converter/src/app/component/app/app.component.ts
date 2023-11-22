@@ -28,4 +28,12 @@ export class AppComponent {
     );
     this.leftMoney = updatedMoney;
   }
+
+  swapCurrencies() {
+    const tmp = this.leftMoney;
+
+    this.leftMoney = this.rightMoney;
+
+    this.rightMoney = tmp;
+  }
 }

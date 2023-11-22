@@ -1,7 +1,10 @@
-<div class="App">
-  <header></header>
-  <div id="center" className="divWithBorder">
-    <form [money]="leftMoney" (moneyChanged)="leftFormChanged($event)"></form>
-    <form [money]="rightMoney" (moneyChanged)="rightFormChanged($event)"></form>
-  </div>
+<header></header>
+<div class="formContainer">
+  <form [money]="leftMoney" (moneyChanged)="leftFormChanged($event)"></form>
+  <img
+    class="convertIcon"
+    src="assets/convert_icon.png"
+    (click)="swapCurrencies()"
+  />
+  <form [money]="rightMoney" (moneyChanged)="rightFormChanged($event)"></form>
 </div>
