@@ -1,17 +1,23 @@
-<div id="inputZone" className="divWithBorder">
+<mat-form-field class="valueInput">
+  <mat-label>Amount</mat-label>
   <input
-    class="input"
-    numbersCheck
+    matInput
     [(ngModel)]="money.amount"
     (ngModelChange)="amountChanged()"
+    numbersCheck
   />
-  <select 
-    [(ngModel)]="money.currency" 
-    (ngModelChange)="currencyChanged()">
-    <option 
-      *ngFor="let currency of currencies" 
-      [value]="currency">
+</mat-form-field>
+
+<mat-form-field class="currency">
+  <mat-label>Currency</mat-label>
+  <mat-select [(ngModel)]="money.currency" (ngModelChange)="currencyChanged()">
+    <mat-select-trigger>
+      <img class="currencyFlag" src="assets/{{ money.currency }}.png" />
+      {{ money.currency.toUpperCase() }}
+    </mat-select-trigger>
+    <mat-option *ngFor="let currency of currencies" [value]="currency">
+      <img class="currencyFlag" src="assets/{{ currency }}.png" />
       {{ currency.toUpperCase() }}
-    </option>
-  </select>
-</div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
