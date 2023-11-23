@@ -15,11 +15,14 @@
   align-items: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .formContainer {
     flex-direction: column;
   }
   .convertIcon {
+    display: none;
+  }
+  header {
     display: none;
   }
 }

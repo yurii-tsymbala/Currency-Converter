@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Money } from '../model/money';
-import { Currency } from '../model/currency';
 
 @Injectable({
   providedIn: 'root',

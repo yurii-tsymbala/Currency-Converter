@@ -12,7 +12,7 @@ export class CellComponent {
   get cellValue(): string {
     return (
       this.money.currency.toUpperCase() +
-      '/UAH ' +
+      '/UAH = ' +
       Number(this.money.amount).toFixed(2)
     );
   }
