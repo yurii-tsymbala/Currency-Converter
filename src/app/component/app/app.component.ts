@@ -16,7 +16,7 @@ export class AppComponent {
   async leftFormChanged(money: Money) {
     const updatedMoney = await this.service.convertFromTo(
       money,
-      this.rightMoney
+      this.rightMoney.currency
     );
     this.rightMoney = updatedMoney;
   }
@@ -24,16 +24,14 @@ export class AppComponent {
   async rightFormChanged(money: Money) {
     const updatedMoney = await this.service.convertFromTo(
       money,
-      this.leftMoney
+      this.leftMoney.currency
     );
     this.leftMoney = updatedMoney;
   }
 
   swapCurrencies() {
     const tmp = this.leftMoney;
-
     this.leftMoney = this.rightMoney;
-
     this.rightMoney = tmp;
   }
 }

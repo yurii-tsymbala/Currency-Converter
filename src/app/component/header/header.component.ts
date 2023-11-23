@@ -8,13 +8,13 @@ import { ExchangeService } from 'src/app/service/exchange.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  moneys: Money[] = [];
+  exchangeRates: Money[] = [];
 
   constructor(private service: ExchangeService) {
     this.loadCurrencies();
   }
 
   async loadCurrencies() {
-    this.moneys = await this.service.getExchangeData();
+    this.exchangeRates = await this.service.fetchExchangeData();
   }
 }
